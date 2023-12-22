@@ -5,11 +5,12 @@ import com.automationMobile.utils.tests.BaseTest;
 import org.testng.annotations.Test;
 
 public class SwipeTest extends BaseTest {
-    private SwipeScreen swipeScreen;
-    @Test
-    public void swipePageTest(){
+    SwipeScreen swipeScreen;
+    @Test()
+    public void TestSwipe(){
         swipeScreen = getSwipeScreen();
-        swipeScreen.swipeMoveRight();
-        swipeScreen.swipeMoveLeft();
+        swipeScreen.BtnSwipeConfirmation();
+        swipeScreen.swipeRight();
+        swipeScreen.swipeLeft();
     }
 }

@@ -23,6 +23,8 @@ public class LoginScreen extends BaseScreen {
     private WebElement signedUpMsg;
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
     private WebElement btnOk;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
+    private WebElement btnOkLogin;
     @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"button-sign-up-container\")")
     private WebElement btnSignUpScreen;
     @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"button-login-container\")")
@@ -62,8 +64,8 @@ public class LoginScreen extends BaseScreen {
         inputRepeatPsw.sendKeys("PswTest123456");
         btnSignUp.click();
         softAssert.assertTrue(isElementDisplayed(signedUpMsg));
-        btnOk.click();
         System.out.println("It has been succesfully registered " + email.split("@")[0]);
+        btnOk.click();
     }
     public void userLogin(){
         softAssert.assertTrue(isElementDisplayed(btnLoginScreen));
@@ -72,8 +74,12 @@ public class LoginScreen extends BaseScreen {
         softAssert.assertTrue(isElementDisplayed(inputEmail));
         softAssert.assertTrue(isElementDisplayed(inputPsw));
 
+        inputEmail.sendKeys(email);
+        inputPsw.sendKeys("PswTest123456");
         btnLogin.click();
+
         softAssert.assertTrue(isElementDisplayed(trueLogin));
+        btnOkLogin.click();
         softAssert.assertAll();
     }
 }

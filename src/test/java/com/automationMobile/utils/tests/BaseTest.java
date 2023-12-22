@@ -6,15 +6,11 @@ import java.net.URL;
 import com.automationMobile.screens.GeneralScreen;
 import com.automationMobile.screens.LoginScreen;
 import com.automationMobile.screens.SwipeScreen;
-import com.automationMobile.screens.WebViewScreen;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-/*import org.testng.annotations.Test;
-import pages.LoginScreen;
-import pages.MainScreen;
-import pages.SwipeScreen;*/
+
 public class BaseTest {
     private AndroidDriver driver;
     @BeforeClass
@@ -38,6 +34,7 @@ public class BaseTest {
     public GeneralScreen getGeneralScreen(){return new GeneralScreen(driver);}
     public LoginScreen getLoginScreen(){return new LoginScreen(driver);}
     public SwipeScreen getSwipeScreen(){return new SwipeScreen(driver);}
+
     @AfterClass
     public void tearDown(){
         if(driver != null){
